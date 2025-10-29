@@ -62,7 +62,7 @@
       animation: float 6s infinite;
     }
     .photo {
-      width: 80px; /* photo size */
+      width: 50px; /* smaller size */
       border-radius: 10px;
       box-shadow: 0 5px 15px rgba(0,0,0,0.3);
       animation: float 8s infinite;
@@ -74,7 +74,7 @@
     }
     @media (max-width: 480px) {
       .photo {
-        width: 50px;
+        width: 35px;
       }
       .heart {
         font-size: 15px;
@@ -109,25 +109,22 @@
 
     // Floating photos
     const photoUrls = [
-      "1.jpg",
-      "2.jpg",
-      "3.jpg",
-      "4.jpg",
-      "5.jpg",
-      "6.jpg",
-      "7.jpg",
-      "8.jpg"
+      "1.jpg", "2.jpg", "3.jpg", "4.jpg",
+      "5.jpg", "6.jpg", "7.jpg", "8.jpg"
     ];
 
-    photoUrls.forEach(url => {
+    // Generate multiple small floating photos
+    for (let i = 0; i < 30; i++) {
       const photo = document.createElement("img");
-      photo.src = url;
+      photo.src = photoUrls[Math.floor(Math.random() * photoUrls.length)];
       photo.className = "photo";
-      photo.style.left = Math.random() * 90 + "vw";
-      photo.style.animationDuration = 6 + Math.random() * 6 + "s";
-      photo.style.top = Math.random() * 80 + "vh"; // random starting height
+      photo.style.left = Math.random() * 95 + "vw";
+      photo.style.top = Math.random() * 90 + "vh";
+      photo.style.width = 30 + Math.random() * 30 + "px"; // random small size 30-60px
+      photo.style.animationDuration = 6 + Math.random() * 6 + "s"; // different speeds
       document.body.appendChild(photo);
-    });
+    }
   </script>
 </body>
 </html>
+
