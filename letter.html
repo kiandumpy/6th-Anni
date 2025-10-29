@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Happy Anniversary 💛</title>
   <style>
+    /* Base Styles */
     body {
       margin: 0;
       height: 100vh;
@@ -19,55 +20,97 @@
       padding: 20px;
       overflow: hidden;
     }
+
     h1 {
       font-size: 2.5em;
       text-shadow: 0 0 20px #ffec80;
       animation: glow 3s infinite alternate;
+      margin: 0.5em 0;
     }
+
     p {
-      max-width: 600px;
+      max-width: 90%;
       font-size: 1.2em;
       text-shadow: 0 0 10px #fff8d0;
+      line-height: 1.5em;
+      margin: 0.5em 0;
     }
+
     @keyframes glow {
       from { text-shadow: 0 0 10px #fff; }
       to { text-shadow: 0 0 25px #ffe066, 0 0 35px #fff; }
     }
+
+    /* Floating hearts */
     .heart {
       position: absolute;
       color: #ffec80;
       animation: float 8s linear infinite;
-      font-size: 20px;
+      font-size: 2em;
+      pointer-events: none;
     }
+
     @keyframes float {
       0% { transform: translateY(100vh); opacity: 0; }
       50% { opacity: 1; }
       100% { transform: translateY(-10vh); opacity: 0; }
     }
+
+    /* Audio styling */
     audio {
-      position: absolute;
+      position: fixed;
       bottom: 10px;
-      width: 300px;
+      width: 80%;
+      max-width: 300px;
+      outline: none;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2em;
+      }
+      p {
+        font-size: 1em;
+      }
+      .heart {
+        font-size: 1.5em;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.6em;
+      }
+      p {
+        font-size: 0.9em;
+      }
+      .heart {
+        font-size: 1.2em;
+      }
+      audio {
+        width: 90%;
+      }
     }
   </style>
 </head>
 <body>
   <h1>Happy Anniversary, My Love 💛</h1>
   <p>
-    My Dearest Ni Ni Lay Lwin @ Ma💛,<br>
+    My Dearest Ni Ni Lay Lwin @ Ma💛,<br><br>
 
-Happy 6 months, my love! 💖<br>
+    Happy 6 months, my love! 💖<br><br>
 
-I can’t believe how quickly these months have passed, yet every single day has been filled with joy, laughter, and love because of you. You’ve brought so much light into my life, and I can’t imagine my days without your smile, your warmth, and your beautiful heart. <br>
+    I can’t believe how quickly these months have passed, yet every single day has been filled with joy, laughter, and love because of you. You’ve brought so much light into my life, and I can’t imagine my days without your smile, your warmth, and your beautiful heart. <br><br>
 
-These past six months have been an incredible journey, and I treasure every moment we’ve shared—every laugh, every hug, every little memory that has made our bond stronger. You’ve taught me what true love feels like, and being with you makes me feel like the luckiest person in the world. <br>
+    These past six months have been an incredible journey, and I treasure every moment we’ve shared—every laugh, every hug, every little memory that has made our bond stronger. You’ve taught me what true love feels like, and being with you makes me feel like the luckiest person in the world. <br><br>
 
-I promise to always support you, make you smile, and stand by your side through everything life brings. You are my best friend, my confidant, and my everything. I look forward to many more months and years together, creating memories, growing together, and loving each other more deeply every day. <br>
+    I promise to always support you, make you smile, and stand by your side through everything life brings. You are my best friend, my confidant, and my everything. I look forward to many more months and years together, creating memories, growing together, and loving each other more deeply every day. <br><br>
 
-Thank you for being you—for your love, your kindness, and for making my heart so incredibly full. I love you more than words can ever express, and I can’t wait to see what the future holds for us. <br>
+    Thank you for being you—for your love, your kindness, and for making my heart so incredibly full. I love you more than words can ever express, and I can’t wait to see what the future holds for us. <br><br>
 
-Forever yours,<br>
-Aung Zin Htun @ Mg 💖
+    Forever yours,<br>
+    Aung Zin Htun @ Mg 💖
   </p>
 
   <audio controls autoplay loop>
@@ -81,6 +124,7 @@ Aung Zin Htun @ Mg 💖
       heart.innerHTML = "💛";
       heart.style.left = Math.random() * 100 + "vw";
       heart.style.animationDuration = 4 + Math.random() * 6 + "s";
+      heart.style.fontSize = (1 + Math.random() * 1.5) + "em";
       document.body.appendChild(heart);
     }
   </script>
