@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Anniversary 💛</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: radial-gradient(circle, #fff7b2, #ffe066);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: "Poppins", sans-serif;
+      color: #e6b800;
+      text-align: center;
+      padding: 20px;
+      overflow: hidden;
+    }
+    h1 {
+      font-size: 2.5em;
+      text-shadow: 0 0 20px #ffec80;
+      animation: glow 3s infinite alternate;
+    }
+    p {
+      max-width: 600px;
+      font-size: 1.2em;
+      text-shadow: 0 0 10px #fff8d0;
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #fff; }
+      to { text-shadow: 0 0 25px #ffe066, 0 0 35px #fff; }
+    }
+    .heart {
+      position: absolute;
+      color: #ffec80;
+      animation: float 8s linear infinite;
+      font-size: 20px;
+    }
+    @keyframes float {
+      0% { transform: translateY(100vh); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateY(-10vh); opacity: 0; }
+    }
+    audio {
+      position: absolute;
+      bottom: 10px;
+      width: 300px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Happy Anniversary, My Love 💛</h1>
+  <p>
+    My Dearest Ni Ni Lay Lwin @ Ma💛,<br>
+
+Happy 6 months, my love! 💖<br>
+
+I can’t believe how quickly these months have passed, yet every single day has been filled with joy, laughter, and love because of you. You’ve brought so much light into my life, and I can’t imagine my days without your smile, your warmth, and your beautiful heart. <br>
+
+These past six months have been an incredible journey, and I treasure every moment we’ve shared—every laugh, every hug, every little memory that has made our bond stronger. You’ve taught me what true love feels like, and being with you makes me feel like the luckiest person in the world. <br>
+
+I promise to always support you, make you smile, and stand by your side through everything life brings. You are my best friend, my confidant, and my everything. I look forward to many more months and years together, creating memories, growing together, and loving each other more deeply every day. <br>
+
+Thank you for being you—for your love, your kindness, and for making my heart so incredibly full. I love you more than words can ever express, and I can’t wait to see what the future holds for us. <br>
+
+Forever yours,<br>
+Aung Zin Htun @ Mg 💖
+  </p>
+
+  <audio controls autoplay loop>
+    <source src="blue.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    for (let i = 0; i < 25; i++) {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerHTML = "💛";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = 4 + Math.random() * 6 + "s";
+      document.body.appendChild(heart);
+    }
+  </script>
+</body>
+</html>
